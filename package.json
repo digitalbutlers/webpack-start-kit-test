@@ -1,0 +1,38 @@
+{
+	"name": "webpack-start-kit",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"type": "module",
+	"os": false,
+	"scripts": {
+		"start": "npm-run-all --parallel dev watch",
+		"deploy": "npm-run-all --parallel prod watch",
+		"watch": "dotenv -c -v NODE_ENV=development node tasks/watch.js",
+		"dev": "npx cf build/development && dotenv -c -v NODE_ENV=development npx webpack",
+		"prod": "npx cf build/production && dotenv -c -v NODE_ENV=production npx webpack"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^16.0.1",
+		"dotenv-cli": "^6.0.0",
+		"ftp-deploy": "^2.4.3",
+		"swiper": "^8.3.0"
+	},
+	"devDependencies": {
+		"clear-folder": "^3.1.0",
+		"css-loader": "^6.7.1",
+		"dotenv-webpack": "^8.0.0",
+		"eslint": "^8.15.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-unicorn": "^42.0.0",
+		"glob": "^8.0.3",
+		"npm-run-all": "^4.1.5",
+		"postcss-preset-env": "^7.7.2",
+		"style-loader": "^3.3.1",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.10.0"
+	}
+}
